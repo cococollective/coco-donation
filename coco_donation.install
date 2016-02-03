@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Sets up the base table for our entity and a table to store information about
+ * the entity types.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+function coco_donation_schema() {
+  $schema = array();
+
+  $schema['coco_donation'] = array(
+    'description' => 'The base table for coco_donation entities.',
+    'fields' => array(
+      'donation_id' => array(
+        'description' => 'Primary Key: Identifier for a donation.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'A timestamp to indicate if or when the item was added',
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('donation_id'),
+    'indexes' => array(
+      'created' => array('created'),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function coco_donation_install() {
+  // @todo add install code.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function coco_donation_uninstall() {
+  // @todo add uninstall code.
+}

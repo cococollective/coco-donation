@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * coco_donation.module
+ *
+ * @todo Add better file description.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function coco_donation_menu() {
+  $items['donate'] = array(
+    'title' => 'Donate',
+    'page callback' => 'coco_donation_donate_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'weight' => 50,
+    'menu_name' => 'main-menu',
+  );
+  $items['donate/thank-you'] = array(
+    'title' => 'Thank you for donating!',
+    'page callback' => 'coco_donation_thank_you_page',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Menu callback; provides a page with a donation form.
+ */
+function coco_donation_donate_page() {
+  $donate_teaser = <<< 'INTRO_TEXT'
+    <p>All issues are political issues, and politics itself is a mass of lies,
+    evasions, folly, hatred, and schizophrenia. When the general atmosphere is
+    bad, language must suffer. I should expect to find — this is a guess which
+    I have not sufficient knowledge to verify — that the German, Russian and
+    Italian languages have all deteriorated in the last ten or fifteen years,
+    as a result of dictatorship.</p>
+
+    <p>But if thought corrupts language, language can also corrupt thought. A
+    bad usage can spread by tradition and imitation even among people who should
+    and do know better.</p>
+INTRO_TEXT;
+  $donate_teaser = '<div class="donate-page--intro">' . $donate_teaser . '</div>';
+
+  $donate_form = '<form><h3>FORM GOES HERE</h3></form>';
+  return array(
+    'first' => array('#markup' => $donate_teaser),
+    'second' => $donate_form,
+  );
+}
+
+/**
+ * Menu callback; provides a thank you page for donors.
+ */
+function coco_donation_thank_you_page() {
+  $output = '<p>We appreciate your support a lot!</p>';
+  return $output;
+}
