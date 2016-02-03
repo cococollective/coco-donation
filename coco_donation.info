@@ -4,5 +4,7 @@ core = 7.x
 version = 7.x-0.x-dev
 package = CocoCore
 dependencies[] = payment
+dependencies[] = payment_uuid
 dependencies[] = paypal_payment
 dependencies[] = entity
+dependencies[] = uuid
