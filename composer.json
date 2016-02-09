@@ -13,7 +13,6 @@
   ],
   "require": {
     "composer/installers": "~1.0",
-    "drupal/drupal": "7.*",
     "drupal/payment": "7.*",
     "drupal/payment_uuid": "7.*",
     "drupal/paypal_payment": "7.*"
