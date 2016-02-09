@@ -3,7 +3,7 @@
   "type": "drupal-module",
   "description": "Drupal module. Provides building blocks for taking donations.",
   "license": "GPL-2.0+",
-  "homepage": "https://www.cococollective.org/",
+  "homepage": "https://github.com/cococollective/coco-donation",
   "authors": [
     {
       "name": "Sierk Beij",
@@ -13,10 +13,11 @@
   ],
   "require": {
     "composer/installers": "~1.0",
-    "drupal/drupal": "7.*"
+    "drupal/drupal": "7.*",
+    "drupal/payment": "7.*",
+    "drupal/payment_uuid": "7.*",
+    "drupal/paypal_payment": "7.*"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "extra": {
     "branch-alias": {
       "dev-7.x-0.x": "7.0.x-dev"
